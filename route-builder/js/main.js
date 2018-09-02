@@ -423,6 +423,14 @@ $(document).ready(function ()
         $status.text("There is no saved route...");
       }
     });
+    $("#show_stops").click(function(){
+      if ($("#show_stops").hasClass("selected")) {
+        $("#show_stops").removeClass("selected");
+      } else {
+        $("#show_stops").addClass("selected");
+      }
+      onZoomChanged();
+    });
     $("#import").click(function(){
       $("#import").addClass("disabled");
       var max = MASTER_TABLE2.length;
@@ -448,9 +456,11 @@ $(document).ready(function ()
       }
       loadStop();
     });
+    // var transitLayer = new google.maps.TransitLayer();
 
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplayArr = [];
+    // var directionsDisplay = new google.maps.DirectionsRenderer();
     var directionsDisplay = new google.maps.DirectionsRenderer({
       draggable: true,
       polylineOptions: {
@@ -480,6 +490,18 @@ $(document).ready(function ()
       styles: STYLE
     });
 
+    function onZoomChanged() {
+      var zoom = map.getZoom();
+      var filterAtZoom = $("#show_stops").hasClass("selected");
+      markers.map(function (marker) {
+        if (filterAtZoom && zoom <= 15) {
+          marker.setMap(null);
+        } else {
+          marker.setMap(map);
+        }
+      });
+    }
+    google.maps.event.addListener(map, 'zoom_changed', onZoomChanged);
     google.maps.event.addListener(map, 'click', function(event) {
       if (isDrawing || isDrawing5) {
         directionsDisplayTemp.setMap(null);

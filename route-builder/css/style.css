@@ -10,6 +10,10 @@
 	opacity: 0.3;
 	pointer-events: none;
 }
+.selected {
+	background: black;
+	color: white;
+}
 #map {
 	position: absolute;
 	top: 0px;

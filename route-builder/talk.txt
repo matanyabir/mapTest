@@ -24,7 +24,4 @@ how to get place id? -> import (6)
 5
 debounce
 
-
-
-
-
+stops at zoom level
