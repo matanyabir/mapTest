@@ -1,0 +1,30 @@
+1
+click
+route service / render
+service options & result (distance)
+23 wp
+dragable + event
+save / load
+marker dragable
+
+2
+windowinfo / overlay marker (also for poc 1?)
+
+(map style)
+3
+(search)
+problem
+show demo
+snap to road
+
+problem - long / spread path -> 4
+
+how to get place id? -> import (6)
+
+5
+debounce
+
+
+
+
+

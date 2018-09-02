@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map PoC</title>
+	<link rel="STYLESHEET" type="text/css" href="css/reset.css" />
+	<link rel="STYLESHEET" type="text/css" href="css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="map"></div>
+	<div id="bar">
+		<p class="auto"><input type="text" id="autoc"/></p>
+		<p>zoom level: <input type="num" id="zoom" placeholder="17"/></p>
+
+		<!--<p><a id="clear" href="#">Click here</a> to clear map.</p>-->
+	</div>
+	<div id="panel">
+
+	<button id="remove_all_markers">CLEAR MAP</button>
+	<button id="save_route">Save route</button>
+	<button id="load_route">Load route</button>
+
+	<div class="title">PoC 1: Click on empty place for add a stop to the route. the app will calc the route. note: stops are draggable</div>
+	<button id="start_draw">Start draw</button>
+	<button id="end_draw" class="disabled">End draw</button>
+
+	<div class="title">PoC 2: Click on stop for add a stop to the route. the app will calc the route</div>
+	<button id="start_draw2">Start draw</button>
+	<button id="end_draw2" class="disabled">End draw</button>
+
+	<div class="title">PoC 3: Click on map to draw a route. the app will find stops on the route</div>
+	<button id="start_draw3">Start draw</button>
+	<button id="end_draw3" class="disabled">End draw</button>
+
+	<div class="title">PoC 4: Click on map to draw a route. the app will calc the route. the app will find stops on the route</div>
+	<button id="start_draw4">Start draw</button>
+	<button id="end_draw4" class="disabled">End draw</button>
+
+	<div class="title">PoC 5: Click on empty place for add a stop to the route. the app will calc the route in MOUSE_MOVE. will search for stops after add stop (=click)</div>
+	<button id="start_draw5">Start draw</button>
+	<button id="end_draw5" class="disabled">End draw</button>
+
+	<div class="title">PoC 6: Import  stops and add place-id</div>
+	<button id="import">Import...</button>
+
+	<div id="status_container">
+		<div id="status">status...</div>
+	</div>
+</div>
+
+		<!-- external libraries -->
+<!--<script src="http://maps.googleapis.com/maps/api/js?libraries=places‌​&sensor=false"></scri‌​pt>-->
+<script src="js/libs/jquery/jquery-1.6.3.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js" type="text/javascript"></script>
+
+<!-- "our" code -->
+<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/stab.js" type="text/javascript"></script>
+
+</body>
+</html>
