@@ -25,6 +25,15 @@ $(document).ready(function ()
     var drawingManager;
     var polylines = [];
 
+    var greenMarker = new google.maps.MarkerImage("assets/dot green.png",
+      new google.maps.Size(18, 18),
+      new google.maps.Point(0, 0),
+      new google.maps.Point(9, 9));
+
+    var grayMarker = new google.maps.MarkerImage("assets/dot.png",
+      new google.maps.Size(18, 18),
+      new google.maps.Point(0, 0),
+      new google.maps.Point(9, 9));
 
     function disableAll() {
       $("#start_draw").addClass("disabled");
@@ -114,7 +123,7 @@ $(document).ready(function ()
         //crete new marker:
         var marker = new google.maps.Marker({
           position: pos,
-          icon: "assets/dot green.png",
+          icon: greenMarker,
           title: stop.name,
           // id: stop.id,
           map: map
@@ -161,7 +170,7 @@ $(document).ready(function ()
         };
         var marker = new google.maps.Marker({
           position: pos,
-          icon: "assets/dot.png",
+          icon: grayMarker,
           title: stop.name,
           // id: stop.id,
           map: map
@@ -319,7 +328,7 @@ $(document).ready(function ()
             //crete new marker:
             var marker = new google.maps.Marker({
               position: pos,
-              icon: "assets/dot green.png",
+              icon: greenMarker,
               title: stop.name,
               map: map
             });
@@ -546,7 +555,7 @@ $(document).ready(function ()
 
     function placeMarker(location, isPoc5) {
       var draggable = !isPoc5;
-      var icon = isPoc5 ? "assets/dot.png" : "assets/dot green.png";
+      var icon = isPoc5 ? grayMarker : greenMarker;
       var marker = new google.maps.Marker({
         position: location,
         icon: icon,
